@@ -1,6 +1,7 @@
 body {
     font-family: 'Josefin Sans';
     background-color: #FFFAFB;
+    overflow-x: hidden; 
   }
   
   * {
@@ -13,6 +14,7 @@ body {
   ::-webkit-scrollbar {
     width: 0px;
   }
+
   
   .right-arrow,
   .left-arrow {
@@ -142,3 +144,22 @@ body {
       width: 280px;
     }
   }
+  .start-page{
+    margin: -4% !important;
+    
+  }
+  .parent{
+    display: flex;
+    flex-direction: row;
+    margin: 0 !important;
+    width: '500%'!important;
+  }
+  /* styles.css */
+.redBackground {
+  padding: 20px;
+  transition: all 0.3s ease; /* Apply smooth transition to all properties over 0.3 seconds with ease timing function */
+}
+
+.rightSlide {
+  transform: translateX(100%); /* Slide the element 100% of its width to the right */
+}
