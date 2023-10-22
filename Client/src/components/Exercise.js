@@ -32,7 +32,7 @@ function Exercise({ setExercises, bodyPart, Exercise }) {
   }
   fetchExercisesData();
   },[bodyPart])
-  console.log(Exercise);
+  // console.log(Exercise);
   return (
     <Box id="exercises" sx={{ mt: { lg: "100px" } }} mt="50px" p="20px">
       <Typography variant="h3" mb="46px">

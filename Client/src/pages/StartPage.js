@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Grid, Button } from "@mui/material";
 import { motion } from "framer-motion";
@@ -6,43 +5,43 @@ import banner from "../assets/images/starting-img.jpg";
 import "../App.css";
 import Login from "../components/Login";
 
-function StartPage() {
+function StartPage({ setUser }) {
   const imageStyle = {
-    width: "100%", 
-    height: "100%",
+    width:    "100%",
+    height:   "100%",
   };
 
   const [isSigninVisible, setisSigninVisible] = useState(false);
-  const[islogin,setlogin]=useState(false);
+  const [islogin, setlogin] = useState(false);
   const [grid, setGrid] = useState(3);
 
   const signup = () => {
     setisSigninVisible(true);
   };
 
-  const login=()=>{
+  const login = () => {
     setlogin(true)
     setisSigninVisible(true);
   }
- 
+
 
   useEffect(() => {
     if (isSigninVisible) {
       const timer = setTimeout(() => {
         setGrid(7);
-      }, 300); // Delay the update by 300ms for an animation effect
-      return () => clearTimeout(timer); // Clear the timeout if the component unmounts before the timeout fires
+      }, 300);
+      return () => clearTimeout(timer);
     } else {
-      setGrid(3); // Reset grid value when login form is not visible
+      setGrid(3);
     }
   }, [isSigninVisible]);
 
   return (
     <Grid
       container
-      spacing={0}
-      position="relative"
-      sx={{ backgroundColor: "black" }}
+      spacing=  {0}
+      position= "relative"
+      sx=       {{ backgroundColor: "black" }}
     >
       <Grid item xs={9}>
         <img src={banner} style={imageStyle} alt="" />
@@ -51,19 +50,19 @@ function StartPage() {
         item
         xs={grid}
         sx={{
-          direction: "flex",
-          backgroundColor: "#d32f2f",
-          position: "absolute",
-          right: 0,
-          width: "100%",
-          height: "100%",
-          opacity: 0.9,
-          zIndex: 12,
-          transition: "all 0.3s ease", // Apply CSS transition for animation
+          direction:        "flex",
+          backgroundColor:  "#d32f2f",
+          position:         "absolute",
+          right:            0,
+          width:            "100%",
+          height:           "100%",
+          opacity:          0.9,
+          zIndex:           12,
+          transition:       "all 0.3s ease",
         }}
       >
-        {isSigninVisible?(
-          <Login isSigninVisible={isSigninVisible} islogin={islogin} />
+        {isSigninVisible ? (
+          <Login isSigninVisible={isSigninVisible} islogin={islogin} setUser={setUser} />
         ) : (
           <Grid
             container
@@ -116,10 +115,10 @@ function StartPage() {
               }}
               onClick={signup}
               size="large"
-              variant="outlined"
+              variant="     outlined"
               color="warning"
             >
-              Sign In
+              Sign Up
             </Button>
             <Button
               sx={{
@@ -140,7 +139,7 @@ function StartPage() {
               variant="outlined"
               color="warning"
             >
-              Login 
+              Sign In
             </Button>
           </Grid>
         )}
